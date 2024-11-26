@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/shop-icon.png' %}">
+</head>
+<body>
+    
+    <div class="heading">
+        <h1 class="site_name" data-tippy-content="Заголовок h1">Web-shop</h1>
+        <h2 data-tippy-content="Заголовок h2">Сайт использует Django</h2>
+    </div>
+
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+
+    <script type="text/javascript" src={% static "js/script.js" %}></script>
+</body>
+</html>
