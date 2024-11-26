@@ -2,6 +2,17 @@
 <img src="https://readme-typing-svg.demolab.com?font=Josefin+Sans&size=28&pause=1000&color=00F7F0&center=true&width=435&lines=Online-shop" alt="Typing SVG" />
 </div>
 
+<div align="center">
+
+[![Django](https://img.shields.io/badge/Django-%23092E20.svg?logo=django&logoColor=white)](#)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000)](#)
+[![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff)](#)
+[![HTML](https://img.shields.io/badge/HTML-%23E34F26.svg?logo=html5&logoColor=white)](#)
+[![CSS](https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=fff)](#)
+[![SQLite](https://img.shields.io/badge/SQLite-%2307405e.svg?logo=sqlite&logoColor=white)](#)
+
+</div>
+
 ## План разработки:
 
 ### 1) Создать пустой проект на Django:
@@ -95,5 +106,6 @@
 
 ### Что дополнительно можно добавить на сайт?
 1. Tippy.js
+
 
 
