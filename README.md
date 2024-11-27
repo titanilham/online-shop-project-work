@@ -112,6 +112,8 @@
 
 ## Заметки во время разработки:
 
+# Не забыть изменить везде шрифт для tippy.js
+
 ### Цвета для сайта:
 <img src="https://visme.co/blog/wp-content/uploads/2016/09/website12-1024x512.jpg"/>
 
