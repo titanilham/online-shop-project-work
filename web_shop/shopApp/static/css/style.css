@@ -1,3 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* 
+#0B0C10 — Очень темный серый (или почти черный).
+
+#1F2833 — Темный серый с оттенком синего.
+
+#C5C6C7 — Светлый серый.
+
+#66FCF1 — Яркий бирюзовый.
+
+#45A29E — Тёмно-бирюзовый.
+*/
+
+body{
+
+    font-family: 'Nunito Sans';
+    background: #0B0C10;
+    color: white;
+}
+
+.head_text{
+
+    font-family: 'Nunito';
+    color: #66FCF1;
+    
+}
+
+
+a{
+    text-decoration: none;
+    color: #ffffff; /* Текст названия товара */
+}
+
 .product-list {
     display: flex;
     flex-wrap: wrap;
@@ -8,17 +43,24 @@
 
 /* Оформление карточек товаров */
 .product-card {
-    width: 200px; /* Ширина карточки товара */
+    width: 250px; /* Ширина карточки товара */
     height: 350px; /* Высота карточки */
-    padding: 10px;
-    border: 1px solid #ddd;
+    padding: 20px;
+    
     border-radius: 8px;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+
+    background-color: #12131a;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
+}
+
+.product-card:hover{
+
+    box-shadow: 0px 0px 6px 0px #45a29d93;
+
 }
 
 /* Стили для изображения в карточке */
@@ -28,51 +70,61 @@
     object-fit: cover; /* Обрезает изображение, чтобы оно заполнило контейнер */
     object-position: center; /* Центрирует картинку */
     margin-bottom: 10px; /* Добавим небольшой отступ снизу */
+
 }
 
 /* Стили для заголовка товара */
 .product-card h2 {
     font-size: 1.2em;
     margin-top: 10px;
+    
+    
 }
 
 /* Стили для цены товара */
 .product-card p {
     font-size: 1.1em;
-    color: #888;
+    color: #ffffff;
+    
 }
 
 /* Кнопка добавления в корзину */
 .add-to-cart-btn {
-    background-color: #007bff;
-    color: white;
+    background-color: #66FCF1;
+    color: #0B0C10;
     padding: 8px 12px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 1em;
+    margin-top: auto;
+    
 }
 
 .add-to-cart-btn:hover {
-    background-color: #0056b3;
+    background-color: #45A29E;
 }
 
-/* Панель поиска */
+
 .search-container {
     text-align: center;
     margin: 20px 0;
 }
+
+
 
 /* Панель навигации */
 .navbar {
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
-    background-color: #f8f8f8;
+    box-shadow: 0px 0px 8px 4px #1f283377;
+    align-items: center; /* Выравнивание элементов по вертикали */
+    justify-content: space-between; /* Элементы растянуты по горизонтали */
 }
 
 .navbar a {
-    color: #333;
+    color: #66FCF1;
     text-decoration: none;
     font-size: 1.2em;
 }
@@ -80,14 +132,16 @@
 .cart-btn {
     font-size: 1em;            /* Уменьшение размера шрифта */
     padding: 5px 8px;          /* Уменьшение отступа внутри кнопки */
-    background-color: #007bff;
-    color: white;
+    background-color: #66FCF1;
     border-radius: 4px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 40px;             
+    height: 40px;      
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;  
+    color: #000000 !important;   
                   
 }
 
@@ -95,5 +149,74 @@
 
 
 .cart-btn:hover {
-    background-color: #0056b3;
+    background-color: #45A29E;
+}
+
+
+/* Поле поиска */
+
+.search-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    
+    
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    width: 60%;
+    max-width: 600px;
+    
+    border-radius: 30px;
+    overflow: hidden;
+    
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.search-form:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    border-radius: 30px 0 0 30px;
+    transition: border-color 0.3s ease;
+    background-color: #1F2833; /* Цвет фона */
+    color: white; /* Цвет текста */
+    
+}
+
+.search-input::placeholder {
+    color: white;
+    font-style: italic;
+    font-family: 'Nunito Sans';
+    background-color: #1F2833;
+}
+
+.search-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #66FCF1;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0 30px 30px 0;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #45A29E;
+}
+
+.search-button:focus {
+    outline: none;
 }
