@@ -103,7 +103,12 @@
 
 ![Screenshot_26-ноя_15-28-02_5279](https://github.com/user-attachments/assets/f7b6fb28-2622-4d81-995c-8b95e1c8240f)
 
+### День Второй: 
+Польностью сделал дизайн для страницы входа через другие аккаунты.
 
+Страница выглядит так:
+
+![Screenshot_27-ноя_04-49-51_17099](https://github.com/user-attachments/assets/9afeab31-0c82-49e8-9893-0a5874309363)
 
 
 
@@ -111,6 +116,8 @@
 
 
 ## Заметки во время разработки:
+
+# Не забыть изменить везде шрифт для tippy.js
 
 ### Цвета для сайта:
 <img src="https://visme.co/blog/wp-content/uploads/2016/09/website12-1024x512.jpg"/>
