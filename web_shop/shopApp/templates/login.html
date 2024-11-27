@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/shop-icon.png' %}">
+</head>
+<body>
+    
+    
+    <div class="login-container">
+        <h1>Login</h1>
+        <p>Sign in using your account:</p>
+        <!-- Google login button -->
+        <a href="/auth/google" class="login-btn" data-tippy-content="Google login button">
+          <img src="{% static 'images/google-icon.svg' %}" >
+          Login with Google
+        </a>
+        <!-- GitHub login button -->
+        <a href="/auth/github" class="login-btn" data-tippy-content="GitHub login button">
+          <img src="{% static 'images/github-icon.svg' %}" >
+          Login with GitHub
+        </a>
+      </div>
+
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+
+    <script type="text/javascript" src={% static "js/script.js" %}></script>
+</body>
+</html>
