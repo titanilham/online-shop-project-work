@@ -11,13 +11,13 @@ tippy('[data-tippy-content]', {
     // Обработчик для добавления товара в корзину
     document.querySelectorAll('.add-to-cart-btn').forEach(button => {
         button.addEventListener('click', function(event) {
-            event.preventDefault();  // Предотвращаем переход по ссылке
-            const productId = button.getAttribute('data-product-id');  // Получаем ID товара
+            event.preventDefault(); 
+            const productId = button.getAttribute('data-product-id');  // Получение ID товара
             fetch(`/add-to-cart/${productId}/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,  // Получаем CSRF-токен
+                    'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,  // Получение CSRF-токена
                 },
                 body: JSON.stringify({ 'product_id': productId })
             })

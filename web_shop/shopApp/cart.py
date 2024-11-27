@@ -1,5 +1,4 @@
-# cart.py
-from .models import Product  # Импорт модели Product
+from .models import Product  
 from decimal import Decimal
 
 class Cart(object):

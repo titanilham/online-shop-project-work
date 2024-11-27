@@ -2,8 +2,7 @@ from django.shortcuts import render
 from .models import Product
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import JsonResponse
-from .cart import Cart  # Импортируем класс корзины
-
+from .cart import Cart  
 def login(request):
     return render(request, "login.html")
 
@@ -16,7 +15,7 @@ def index(request):
     return render(request, 'index.html', {'products': products})
 
 def product_detail(request, pk):
-    product = get_object_or_404(Product, pk=pk)  # Получаем товар по ID (pk)
+    product = get_object_or_404(Product, pk=pk)  # Получение товара по ID (pk)
     return render(request, 'product_detail.html', {'product': product})
 
 
@@ -27,16 +26,16 @@ def cart_view(request):
     return render(request, 'cart_view.html', {'cart': cart})
 
 def remove_from_cart(request, product_id):
-    cart = Cart(request)  # Получаем корзину
-    cart.remove(product_id)  # Удаляем товар из корзины
-    return redirect('cart_view')  # Перенаправляем на страницу корзины
+    cart = Cart(request)  
+    cart.remove(product_id)  # Удаление товара из корзины
+    return redirect('cart_view')  # Перенаправление на страницу корзины
 
 def add_to_cart(request, pk):
-    product = get_object_or_404(Product, pk=pk)  # Получаем товар по ID
-    cart = Cart(request)  # Инициализируем корзину с использованием сессии
+    product = get_object_or_404(Product, pk=pk)  # Получение товара по ID
+    cart = Cart(request)  
     cart.add(product)  # Добавляем товар в корзину
     return redirect('cart_view')  # Перенаправляем на страницу корзины
 
 def checkout_view(request):
-    # Ваша логика оформления заказа
+    
     return render(request, 'checkout.html')

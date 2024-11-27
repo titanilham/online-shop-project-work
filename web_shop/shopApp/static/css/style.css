@@ -1,4 +1,3 @@
-/* Стили для списка товаров */
 .product-list {
     display: flex;
     flex-wrap: wrap;
@@ -79,8 +78,8 @@
 }
 
 .cart-btn {
-    font-size: 1em;            /* Уменьшаем размер шрифта */
-    padding: 5px 8px;          /* Уменьшаем отступы внутри кнопки */
+    font-size: 1em;            /* Уменьшение размера шрифта */
+    padding: 5px 8px;          /* Уменьшение отступа внутри кнопки */
     background-color: #007bff;
     color: white;
     border-radius: 4px;
