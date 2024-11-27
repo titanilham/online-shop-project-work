@@ -27,7 +27,9 @@
     <div class="product-list">
         {% for product in products %}
             <div class="product-card">
-                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                <a href="{% url 'product_detail' product.pk %}">
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                </a>
                 <h2><a href="{% url 'product_detail' product.pk %}">{{ product.name }}</a></h2>
                 <p>{{ product.price }} ₽</p>
                 <!-- Форма добавления товара в корзину с AJAX -->
