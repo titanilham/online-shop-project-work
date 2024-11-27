@@ -1,36 +1,100 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
-/* 
-Для заголовок - Nunito
-Для остальногое текста - Nunito Sans 
-*/
-
-/* 
-#0B0C10 — Очень темный серый (или почти черный).
-#1F2833 — Темный серый с оттенком синего.
-#C5C6C7 — Светлый серый.
-#66FCF1 — Яркий бирюзовый.
-#45A29E — Тёмно-бирюзовый. 
-*/
-
-body{
-    font-family: 'Nunito Sans';
-    background: #0B0C10;
-    color: white;
-    
-
+/* Стили для списка товаров */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; /* Расстояние между карточками */
+    margin-top: 20px;
 }
 
-.site_name{
-    color: #66FCF1;
-    font-family: 'Nunito';
-    cursor: default;
-
-}
-
-.heading{
-    font-size: 150%;
+/* Оформление карточек товаров */
+.product-card {
+    width: 200px; /* Ширина карточки товара */
+    height: 350px; /* Высота карточки */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
+/* Стили для изображения в карточке */
+.product-card img {
+    width: 100%;
+    height: 200px; /* Высота изображения в карточке */
+    object-fit: cover; /* Обрезает изображение, чтобы оно заполнило контейнер */
+    object-position: center; /* Центрирует картинку */
+    margin-bottom: 10px; /* Добавим небольшой отступ снизу */
+}
+
+/* Стили для заголовка товара */
+.product-card h2 {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Стили для цены товара */
+.product-card p {
+    font-size: 1.1em;
+    color: #888;
+}
+
+/* Кнопка добавления в корзину */
+.add-to-cart-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Панель поиска */
+.search-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Панель навигации */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #f8f8f8;
+}
+
+.navbar a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.cart-btn {
+    font-size: 1em;            /* Уменьшаем размер шрифта */
+    padding: 5px 8px;          /* Уменьшаем отступы внутри кнопки */
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;             
+                  
+}
+
+
+
+
+.cart-btn:hover {
+    background-color: #0056b3;
 }

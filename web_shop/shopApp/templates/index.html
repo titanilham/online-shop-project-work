@@ -4,20 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
+    <title>Магазин</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="shortcut icon" href="{% static 'images/shop-icon.png' %}">
 </head>
 <body>
-    
-    <div class="heading">
-        <h1 class="site_name" data-tippy-content="Заголовок h1">Web-shop</h1>
-        <h2 data-tippy-content="Заголовок h2">Сайт использует Django</h2>
+    <!-- Панель навигации -->
+    <div class="navbar">
+        <h1><a href="{% url 'product_list' %}">Магазин</a></h1>
+        <a href="{% url 'cart_view' %}" class="cart-btn">🛒 Корзина</a>
+    </div>
+
+    <!-- Поле поиска -->
+    <div class="search-container">
+        <form method="GET" action="{% url 'product_list' %}">
+            <input type="text" name="query" placeholder="Найти товары..." value="{{ request.GET.query|default:'' }}">
+            <button type="submit">Поиск</button>
+        </form>
+    </div>
+
+    <!-- Список товаров -->
+    <div class="product-list">
+        {% for product in products %}
+            <div class="product-card">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                <h2><a href="{% url 'product_detail' product.pk %}">{{ product.name }}</a></h2>
+                <p>{{ product.price }} ₽</p>
+                <!-- Форма добавления товара в корзину с AJAX -->
+                <form method="POST" action="{% url 'add_to_cart' product.pk %}" class="add-to-cart-form">
+                    {% csrf_token %}
+                    <button type="submit" class="add-to-cart-btn" data-product-id="{{ product.pk }}">Добавить в корзину</button>
+                </form>
+            </div>
+        {% endfor %}
     </div>
 
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
-
-    <script type="text/javascript" src={% static "js/script.js" %}></script>
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

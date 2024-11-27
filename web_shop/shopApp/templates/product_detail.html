@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>{{ product.name }}</h1>
+    <img src="{{ product.image.url }}" alt="{{ product.name }}" width="300">
+    <p>{{ product.description }}</p>
+    <p>Цена: {{ product.price }} ₽</p>
+
+    <form action="{% url 'add_to_cart' product.pk %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Добавить в корзину</button>
+    </form>
+
+    <a href="{% url 'product_list' %}">Вернуться к списку товаров</a>
+</body>
+</html>

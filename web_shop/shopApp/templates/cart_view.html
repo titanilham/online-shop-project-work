@@ -1,0 +1,61 @@
+<!-- cart_view.html -->
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <!-- Панель навигации -->
+    <div class="navbar">
+        <h1><a href="{% url 'product_list' %}">Магазин</a></h1>
+        <a href="{% url 'cart_view' %}" class="cart-btn">🛒 Корзина</a>
+    </div>
+
+    <h1>Ваша корзина</h1>
+
+    {% if cart %}
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Товар</th>
+                    <th>Цена</th>
+                    <th>Количество</th>
+                    <th>Удалить</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart %}
+                    <tr>
+                        <td>
+                            <a href="{% url 'product_detail' item.product.pk %}">
+                                <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" width="50">
+                                {{ item.product.name }}
+                            </a>
+                        </td>
+                        <td>{{ item.price }} ₽</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>
+                            <form method="POST" action="{% url 'remove_from_cart' item.product.pk %}">
+                                {% csrf_token %}
+                                <button type="submit">Удалить</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="cart-summary">
+            <p>Общая стоимость: {{ cart.get_total_price }} ₽</p>
+            <a href="{% url 'checkout' %}" class="checkout-btn">Перейти к оформлению</a>
+        </div>
+    {% else %}
+        <p>Ваша корзина пуста.</p>
+    {% endif %}
+
+</body>
+</html>

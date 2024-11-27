@@ -18,11 +18,22 @@ from django.contrib import admin
 from django.urls import path
 from shopApp import views
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     
     path('admin/', admin.site.urls),
-    path('main/', views.index, name='index'),
     path('', views.login, name='login'),
+    path('main/', views.index, name='product_list'),  # Главная страница
+    path('product/<int:pk>/', views.product_detail, name='product_detail'),
+    path('add-to-cart/<int:pk>/', views.add_to_cart, name='add_to_cart'),  # маршрут для добавления товара в корзину
+    path('cart/', views.cart_view, name='cart_view'),
+    path('remove/<int:product_id>/', views.remove_from_cart, name='remove_from_cart'),
+    path('checkout/', views.checkout_view, name='checkout'),
     
     
 ]
+
+if settings.DEBUG:  # Только в режиме разработки
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

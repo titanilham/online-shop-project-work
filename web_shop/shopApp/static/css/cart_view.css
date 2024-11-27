@@ -1,0 +1,85 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.cart-btn {
+    background-color: #ff9900;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+h1 {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-table th, .cart-table td {
+    padding: 12px;
+    text-align: left;
+}
+
+.cart-table th {
+    background-color: #f1f1f1;
+}
+
+.cart-table td img {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.cart-summary {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cart-summary .checkout-btn {
+    background-color: #ff9900;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+button {
+    background-color: #ff3300;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #cc2900;
+}
+
+form {
+    display: inline-block;
+}
