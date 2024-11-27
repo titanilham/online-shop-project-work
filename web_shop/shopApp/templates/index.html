@@ -9,16 +9,20 @@
     <link rel="shortcut icon" href="{% static 'images/shop-icon.png' %}">
 </head>
 <body>
-   <!-- Панель навигации -->
-<div class="navbar">
-    <h1 class="head_text"><a href="{% url 'product_list' %}">Магазин</a></h1>
-    <form method="GET" action="{% url 'product_list' %}" class="search-form">
-        <input type="text" name="query" placeholder="Найти товары..." value="{{ request.GET.query|default:'' }}" class="search-input">
-        <button type="submit" class="search-button">🔍</button>
-    </form>
-    <a href="{% url 'cart_view' %}" class="cart-btn">🛒 Корзина</a>
-</div>
 
+    <!-- Панель навигации -->
+    <div class="navbar">
+        <h1 class="head_text"><a href="{% url 'product_list' %}">Магазин</a></h1>
+        <a href="{% url 'cart_view' %}" class="cart-btn">🛒 Корзина</a>
+    </div>
+
+    <!-- Поле поиска -->
+    <div class="search-container">
+        <form method="GET" action="{% url 'product_list' %}" class="search-form">
+            <input type="text" name="query" placeholder="Найти товары..." value="{{ request.GET.query|default:'' }}" class="search-input">
+            <button type="submit" class="search-button">🔍</button>
+        </form>
+    </div>
 
     <!-- Список товаров -->
     <div class="product-list">

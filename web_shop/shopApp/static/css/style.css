@@ -34,9 +34,10 @@ a{
 }
 
 .product-list {
-    display: flex;
+    
+    display:flex; 
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content:center;
     gap: 20px; /* Расстояние между карточками */
     margin-top: 20px;
 }
@@ -70,6 +71,7 @@ a{
     object-fit: cover; /* Обрезает изображение, чтобы оно заполнило контейнер */
     object-position: center; /* Центрирует картинку */
     margin-bottom: 10px; /* Добавим небольшой отступ снизу */
+    
 
 }
 
@@ -219,4 +221,22 @@ a{
 
 .search-button:focus {
     outline: none;
+}
+
+
+@media (max-width: 900px) {
+    .search-form {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .search-input {
+        width: 80%; /* Увеличиваем ширину поля ввода */
+    }
+
+    .search-button {
+        padding: 10px 15px;
+        font-size: 16px;
+        margin-left: 10px; /* Немного увеличиваем отступ */
+    }
 }
