@@ -115,7 +115,7 @@
 
 Главная страница выгладит так:
 
-![Screenshot_27-ноя_15-47-04_9165](https://github.com/user-attachments/assets/2af1f674-af7a-4c99-8710-8985284f5438)
+![image](https://github.com/user-attachments/assets/52b830a7-489b-45e5-a96e-70c8ea20c31a)
 
 
 ## Заметки во время разработки:
