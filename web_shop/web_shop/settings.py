@@ -32,6 +32,8 @@ CART_SESSION_ID = 'cart'  # ID для сессии корзины
 
 # Application definition
 
+SITE_ID = 1
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,8 +41,23 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',  
     'shopApp',
+    
 ]
+
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend', 
+]
+
+# Укажите редиректы после входа и выхода
+LOGIN_REDIRECT_URL = '/main/'
+LOGOUT_REDIRECT_URL = '/'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -50,10 +67,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
-SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Используем базы данных для сессий
-SESSION_COOKIE_NAME = 'sessionid'  # Имя cookie для сессий
+
+
 
 ROOT_URLCONF = 'web_shop.urls'
 

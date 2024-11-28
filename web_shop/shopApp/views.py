@@ -1,10 +1,44 @@
-from django.shortcuts import render
 from .models import Product
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import JsonResponse
 from .cart import Cart  
-def login(request):
-    return render(request, "login.html")
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
+from .forms import CustomUserCreationForm
+from django.contrib.auth.forms import AuthenticationForm
+
+def login_view(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            user = form.get_user()
+            login(request, user)
+            return redirect('product_list')  # Перенаправление на главную страницу
+    else:
+        form = AuthenticationForm()
+
+    return render(request, 'login.html', {'form': form})
+
+def register(request):
+    if request.method == 'POST':
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()  # Сохраняем нового пользователя
+            login(request, user)  # Логиним пользователя сразу после регистрации
+            return redirect('product_list')  # Перенаправление на главную страницу
+    else:
+        form = CustomUserCreationForm()
+
+    return render(request, 'register.html', {'form': form})
+
+
+@login_required  # Этот декоратор защищает страницу от неавторизованных пользователей
+def index(request):
+    # Логика для главной страницы
+    return render(request, 'index.html')
+
 
 def index(request):
     query = request.GET.get('query', '')
@@ -39,3 +73,4 @@ def add_to_cart(request, pk):
 def checkout_view(request):
     
     return render(request, 'checkout.html')
+

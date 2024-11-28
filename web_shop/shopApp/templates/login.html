@@ -1,33 +1,46 @@
-<!DOCTYPE html>
 {% load static %}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
+    <title>Login - Shop</title>
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
     <link rel="shortcut icon" href="{% static 'images/shop-icon.png' %}">
 </head>
 <body>
-    
-    <div class="login-container">
-        <h1>Login</h1>
-        <p>Sign in using your account:</p>
-        <!-- Google login button -->
-        <a href="/auth/google" class="login-btn" data-tippy-content="Google login button">
-          <img src="{% static 'images/google-icon.svg' %}" >
-          Login with Google
-        </a>
-        <!-- GitHub login button -->
-        <a href="/auth/github" class="login-btn" data-tippy-content="GitHub login button">
-          <img src="{% static 'images/github-icon.svg' %}" >
-          Login with GitHub
-        </a>
-      </div>
+    <div class="auth-container">
+        <h2>Welcome to the Shop</h2>
+        <h3>Login to Your Account</h3>
+        
+        <form method="post">
+            {% csrf_token %}
+            
+            <!-- Вывод ошибок, если есть -->
+            {% if form.errors %}
+                <div class="errors">
+                    <ul>
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
 
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://unpkg.com/tippy.js@6"></script>
+            <div class="form-group">
+                <label for="id_username">Username</label>
+                {{ form.username }}
+            </div>
+            <div class="form-group">
+                <label for="id_password">Password</label>
+                {{ form.password }}
+            </div>
+            <button type="submit" class="auth-btn">Log in</button>
+        </form>
 
-    <script type="text/javascript" src={% static "js/script.js" %}></script>
+        <p class="switch-form">Don't have an account? <a href="{% url 'register' %}">Register here</a></p>
+    </div>
 </body>
 </html>

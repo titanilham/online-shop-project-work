@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+</head>
+<body>
+    
+  <div class="signup-container">
+    <div class="signup-box">
+        <h1>Sign Up</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}  <!-- Вставляем форму -->
+            <button type="submit">Sign up</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

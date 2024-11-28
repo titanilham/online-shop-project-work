@@ -1,9 +1,8 @@
-// tippy('[data-tippy-content]');
-
-tippy('[data-tippy-content]', {
-    theme: 'custom', // Указывает тему из CSS
-    animation: 'fade', // Эффект появления
-    duration: [300, 200], // Длительность появления и скрытия
-    
-    
+document.addEventListener('DOMContentLoaded', function () {
+  console.log('JavaScript подключен');
+  tippy('.form-group', {
+      content: 'Введите ваши данные для входа',
+      placement: 'top',
+      animation: 'fade',
   });
+});
