@@ -1,16 +1,31 @@
-/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+/* 
+#0B0C10 — Очень темный серый (или почти черный).
+
+#1F2833 — Темный серый с оттенком синего.
+
+#C5C6C7 — Светлый серый.
+
+#66FCF1 — Яркий бирюзовый.
+
+#45A29E — Тёмно-бирюзовый.
+*/
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Nunito Sans';
+    background-color: #0B0C10 ;
     padding: 20px;
+    color: white;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
+    background-color: #0e0f15;
     color: white;
     padding: 10px 20px;
 }
@@ -18,10 +33,11 @@ body {
 .navbar a {
     color: white;
     text-decoration: none;
+    font-family: 'Nunito';
 }
 
 .cart-btn {
-    background-color: #ff9900;
+    background-color: #45A29E;
     padding: 8px 12px;
     border-radius: 5px;
 }
@@ -29,13 +45,21 @@ body {
 h1 {
     margin-top: 20px;
     text-align: center;
+    color: #66FCF1;
+}
+
+a{
+
+    text-decoration: none !important;
+    color: white; 
+
 }
 
 .cart-table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-    background-color: white;
+    background-color: #0d0e13;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -45,21 +69,23 @@ h1 {
 }
 
 .cart-table th {
-    background-color: #f1f1f1;
+    background-color: #0d0e13;
 }
 
 .cart-table td img {
     margin-right: 10px;
     vertical-align: middle;
+    
 }
 
 .cart-summary {
     text-align: center;
     margin-top: 20px;
+    color: white;
 }
 
 .cart-summary .checkout-btn {
-    background-color: #ff9900;
+    background-color: #45A29E;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
