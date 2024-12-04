@@ -132,8 +132,8 @@ a{
 }
 
 .cart-btn {
-    font-size: 1em;            /* Уменьшение размера шрифта */
-    padding: 5px 8px;          /* Уменьшение отступа внутри кнопки */
+    font-size: 1em;            
+    padding: 5px 8px;          
     background-color: #66FCF1;
     border-radius: 4px;
     cursor: pointer;
